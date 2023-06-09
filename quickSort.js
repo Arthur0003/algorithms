@@ -1,11 +1,11 @@
-const arr = [1, 22, 13, 11, 77, 32, 1231, 123];
+const arr = [1, 1, 1, 8, 7, 13, 5];
 
-const quickSort = (arr = []) => {
+const quickSort = (arr) => {
   if (arr.length <= 1) {
     return arr;
   }
 
-  let pivot = arr[Math.floor(Math.random() * arr.length)];
+  const pivot = arr[Math.floor(Math.random() * arr.length)];
   const leftArr = arr.filter((num) => num < pivot);
   const rightArr = arr.filter((num) => num > pivot);
 
