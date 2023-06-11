@@ -1,4 +1,4 @@
-const arr = [1, 1, 1, 8, 7, 13, 5];
+const arr = [1, 8, 7, 13, 5];
 
 const quickSort = (arr) => {
   if (arr.length <= 1) {
