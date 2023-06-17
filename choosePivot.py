@@ -1,4 +1,5 @@
-int_list = [2, 1, 1, 1, 1, 1, 1, 5, 4, 9, 8]
+int_list = [1, 10, 3, 7, 2]
+# int_list = [12, 9, 7, 15, 10]
 
 
 def choosePivot(int_list: list, idx: int):
@@ -15,4 +16,18 @@ def choosePivot(int_list: list, idx: int):
     return int_list
 
 
-print(choosePivot(int_list, 7))
+def choosePivotWithALoop(int_list: list):
+    p = int_list[-1]
+    li = 0
+
+    for idx in range(len(int_list) - 1):
+        if int_list[idx] <= p:
+            int_list[li], int_list[idx] = int_list[idx], int_list[li]
+            li = li + 1
+
+    int_list[li], int_list[-1] = p, int_list[li]
+
+    return int_list
+
+
+print(choosePivotWithALoop(int_list))
