@@ -75,7 +75,7 @@ class Graph {
 
   // searching if there's route between start and destination -> using breadth first search
   bfs(start, destination) {
-    const visited = new Set();
+    const visited = new Set(start);
     const queue = [start];
 
     // if queue are empty, stopping iteration
@@ -87,7 +87,7 @@ class Graph {
       for (const edgeItem of edgeItems) {
         // If we find the path, just logging a message
         if (edgeItem === destination) {
-          console.log('The destination was found');
+          console.log('The destination was found-------');
         }
 
         // Marking the airport that we have visited
@@ -108,7 +108,7 @@ class Graph {
 
     // iterating current vertex children
     // if we find the path than logging a message
-    // if not we calling function using recursion for deep search
+    // if not we are calling function using recursion for deep search
     for (const edgeItem of edgeItems) {
       if (edgeItem === endPoint) {
         console.log('the end point was found');
@@ -127,5 +127,5 @@ airports.forEach((airport) => graph.addVertex(airport));
 routes.forEach((route) => graph.addEdge(...route));
 
 console.log(graph.adjacencyList);
-// console.log(graph.bfs('PHX', 'BKK'));
-console.log(graph.dfs('PHX', 'BKK', new Set()));
+console.log(graph.bfs('PHX', 'BKK'));
+// console.log(graph.dfs('PHX', 'BKK', new Set()));
